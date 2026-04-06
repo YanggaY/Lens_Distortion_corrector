@@ -37,7 +37,7 @@ while True:
     cv.imshow("Original", img)
     cv.imshow("Undistorted", undistorted)
 
-    if cv.waitKey(0) == 27:        #ESC 누르면 종료
+    if cv.waitKey(30) == 27:        #ESC 누르면 종료
         break
 video.release()
 cv.destroyAllWindows()
