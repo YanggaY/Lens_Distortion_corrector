@@ -1,20 +1,20 @@
-# Lens_Distortion_corrector
+# 렌즈 왜곡 보정 프로그램
 
-Lens distortion correction for video using OpenCV.<br>
+#### OpenCV를 이용해서 영상 왜곡을 보정합니다.
 ---
-*필요 환경*
+## 필요 환경
 
 
 *Numpy, openCV가 설치되어있지 않다면 아래 명령어를 통해 설치*
 
 
-*pip install opencv-python numpy*
+pip install opencv-python numpy
 
-# 렌즈 왜곡 보정 프로그램입니다.
-OpenCV를 이용해서 영상 왜곡을 보정합니다.
+<br>
 
-사용법
-1. 체스판을 출력하여 "수평에 가까운 곳"에 부착한뒤 영상을 다양한 각도에서 촬영후 data폴더안에 저장합니다.<br>
+
+## 사용법
+1. 체스판을 출력하여 "수평에 가까운 곳"에 부착한뒤 영상을 다양한 각도에서 영상촬영후 data폴더안에 저장합니다.<br>
    (적어도 영상의 1/3이상은 체스판으로 채우시고, AF는 고정으로 촬영합니다.)
 
    
@@ -35,10 +35,12 @@ OpenCV를 이용해서 영상 왜곡을 보정합니다.
 
 <br><br><br>
 ---
-**현재 첨부된 영상의 카메라 캘리브레이션 결과**<br>(아이폰15pro 광각 + 안경렌즈(-2.5D)2개 중첩)
+**현재 첨부된 영상의 카메라 캘리브레이션 결과**<br>(아이폰15pro 광각렌즈 + 안경렌즈(-2.5D)2개 중첩)
 
 
 K = [575.2420, 0.0000, 625.6805], [0.0000, 583.4794, 324.6198], [0.0000, 0.0000, 1.0000]
+
+
 RMSE = 1.386496
 
 
@@ -49,18 +51,32 @@ fx = 575.2353,  fy = 583.4667,  cx = 625.6735,  cy = 324.6171
 
 <br><br><br>
 
+# Results
+
+
+
+### Original
+
+![Original](data/Original.png)
+<br>
+### Rectified
+
+
+![Rectified](data/Rectified.png)
+
+
 ---
+# Lens_Distortion_corrector
 
-
+Lens distortion correction for video using OpenCV.<br>
+---
 **Requirements**
 
 If Numpy and OpenCV are not installed, run the command below.
 
 pip install opencv-python numpy
 
----
-# Results
-![Original](data/Orginal.png)
+
 ## Usage
 
 1. Print a chessboard pattern, attach it to a nearly flat surface, and record a video from various angles. Save the video in the `data` folder.
@@ -80,5 +96,34 @@ pip install opencv-python numpy
 
 ---
 
-## Calibration Results
-(iPhone 15 Pro wide + 2x glasses lens (-2.5D))
+**Calibration Results**<br>(iPhone 15 Pro wide + 2x glasses lens (-2.5D))
+
+
+K = [575.2420, 0.0000, 625.6805], [0.0000, 583.4794, 324.6198], [0.0000, 0.0000, 1.0000]
+
+
+
+RMSE = 1.386496
+
+
+dist_coeff = [-0.13892567, 0.09029208, -0.01009389, -0.00294471, 0.01753342]
+
+
+fx = 575.2353,  fy = 583.4667,  cx = 625.6735,  cy = 324.6171
+
+<br>
+
+
+# Results
+
+
+
+### Original
+
+![Original](data/Original.png)
+<br>
+### Rectified
+
+
+![Rectified](data/Rectified.png)
+
